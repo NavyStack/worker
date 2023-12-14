@@ -1,0 +1,18 @@
+name: CLEAR
+on:
+  workflow_dispatch:
+
+jobs:
+  CLEAR:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CLEAR
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            ${{ secrets.SCRIPT01 }}
+            ${{ secrets.SCRIPT02 }}
