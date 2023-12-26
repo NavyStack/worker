@@ -1,0 +1,17 @@
+name: Reset-hard
+on:
+  workflow_dispatch:
+
+jobs:
+  reset-hard:
+    runs-on: ubuntu-latest
+    steps:
+      - name: reset-hard
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            ${{ secrets.SCRIPT04 }}

@@ -1,0 +1,17 @@
+name: Down-Up
+on:
+  workflow_dispatch:
+
+jobs:
+  down-Up:
+    runs-on: ubuntu-latest
+    steps:
+      - name: down-Up
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
+            ${{ secrets.SCRIPT03 }}
